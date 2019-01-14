@@ -412,6 +412,7 @@ in {
           Group = "graphite";
           PermissionsStartOnly = true;
           PIDFile="/run/${name}/${name}.pid";
+          LimitNOFILE = 65536;
         };
         preStart = ''
           install -dm0700 -o graphite -g graphite ${cfg.dataDir}
